@@ -1,0 +1,36 @@
+.AddMemberForm{
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    height:100%;
+    /* align-items: flex-start; */
+    /* width: 50%; */
+}
+.AddMemberForm textarea {
+    max-width: 200px;
+    max-height: 100px;
+    overflow-y: auto; 
+    border-radius: 5px; 
+}
+.AddMemberForm input{
+border-radius: 5px; 
+}
+.AddMemberForm label{
+    align-self: center;
+}
+.divForm{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly;
+    width:100%;
+    padding: 0; */
+}
+.buttonForm{
+    align-self: center;
+    padding-top: 5px;
+}
+.cardTitle {
+    /* margin-bottom: 20px; */
+    text-align: center;
+  }
