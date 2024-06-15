@@ -8,7 +8,7 @@ nav {
     nav {
       flex-direction: column;
     }
-  }
+}
 ul{
     display:flex;
     justify-content: center;

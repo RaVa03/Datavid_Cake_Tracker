@@ -17,22 +17,40 @@ async function main() {
 // Example API Routes
 const router = express.Router();
 
+router.get('/', async (req, res) => {
+    try {
+      const members = await MemberModel.find(); 
+      res.json(members);
+    } catch (err) {
+      res.status(500).json({ message: err.message });
+    }
+  });
 
 router.post('/add-member', async (req, res) => {
-    console.log(`REQ: ${req}`)
+    console.log(`Received data: ${JSON.stringify(req.body)}`);
     const member = new MemberModel({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       birthDate: req.body.birthDate,
       country: req.body.country,
-      city: req.body.city
+      city: req.body.city,
+      image: req.body.image
     });
   
     try {
       const addMember = await member.save();
       res.status(201).json(addMember);
-    } catch (err) {
-      res.status(400).json({ message: err.message });
+    } 
+    catch (err) {
+        console.error('Validation Error:', err); // Log full error
+        if (err.name === 'ValidationError') {
+            const errorMessages = {};
+            for (let field in err.errors) {
+                errorMessages[field] = err.errors[field].message;
+            }
+            return res.status(400).json({ errors: errorMessages });
+        }
+        res.status(500).json({ message: err.message });
     }
   });
 // Register the router
