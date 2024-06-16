@@ -1,7 +1,7 @@
 import "./MemberCard.css"
 export default function MemberCard(props){
     const birthDateValue = new Date (props.birthDate);
-    const birthDateString = birthDateValue.getUTCDay() + "/"+ birthDateValue.getUTCMonth() + '/' + birthDateValue.getUTCFullYear();
+    const birthDateString = birthDateValue.getUTCDate() + "/"+ (birthDateValue.getUTCMonth() +1) + '/' + birthDateValue.getUTCFullYear();
     return(
         <div className="MemberCard" >
             <div className="MemberImage">

@@ -30,7 +30,7 @@ export default function AddMemberForm(props){
     }
     
     return(
-        <AddCard backgroundColor="#b5e5f5">
+        <AddCard backgroundColor="#dfedf6">
             <form className="AddMemberForm" onSubmit={submitHandler} method="POST">
             <h1 className="cardTitle">Add a new member</h1>
                <div className="divForm">
@@ -61,8 +61,8 @@ export default function AddMemberForm(props){
                     <label htmlFor="image">Image url</label>
                     <input onChange={(event)=>{setImageValue(event.target.value);console.log(event.target.value);}} type="url" name="image" id="image" placeholder="Enter the image url"  required/>
                 </div>
-                <div className='buttonForm'>
-                    <Button color="white" text={"Add memeber"} ></Button>
+                <div className='formButton'>
+                    <Button color="white" textColor="#2d334d" text={"Add member"} ></Button>
                 </div>
             </form>
         </AddCard>
