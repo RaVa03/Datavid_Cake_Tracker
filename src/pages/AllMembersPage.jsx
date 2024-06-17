@@ -1,6 +1,5 @@
 import { useEffect,useState } from "react"
 import AllMembersList from "../extra/AllMembersList"
-import "./AllMembersPage.css"
 
 export default function AllMembersPage(){
     const [isLoading, setIsLoading] = useState(true);
@@ -9,7 +8,7 @@ export default function AllMembersPage(){
         setIsLoading(true);
         fetch(
            "http://localhost:3000",
-           {headers: { 'Content-type': 'application/json'//evidentiem ca datele sunt de tip JSON
+           {headers: { 'Content-type': 'application/json'
         }}
         ).then((response)=>{
             return response.json();

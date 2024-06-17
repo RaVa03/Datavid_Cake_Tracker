@@ -1,24 +1,24 @@
-.AddMemberForm{
+.AddMemberForm {
     padding: 10px 10px;
     display: flex;
     flex-direction: column;
     justify-content:space-evenly;
     height:100%;
 }
-.AddMemberForm input{
+.AddMemberForm input {
     border-radius: 5px;
     width:100%;
 }
-.AddMemberForm label{
+.AddMemberForm label {
     align-self: center;
     color: #232c4b;
     padding-bottom: 5px;
 }
-.divForm{
+.divForm {
     display: flex;
     flex-direction: column;
 }
-.formButton{
+.formButton {
     align-self: center;
     padding-top: 5px;
 }

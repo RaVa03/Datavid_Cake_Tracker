@@ -10,14 +10,13 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      border: 1px solid black;
       border-radius: 20px;
       margin-bottom: 50px;
       overflow: hidden;
       margin-top: 40px;
     }
   }
-  @media (min-width: 700px) {
+  @media (min-width: 900px) {
     .AddCard {
       width: 70%;
       max-width:350px;

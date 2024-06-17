@@ -15,10 +15,7 @@ export default function AllMembersList(props){
 
     const calculateTimeUntilBirthday=(birthDate)=>{
         const currentDateUTC= new Date();
-        console.log("\n CURRENT",currentDateUTC);
         const birthDateUTC=new Date(birthDate);
-        console.log("\n BD", birthDate);
-        console.log("\n BD UTC", birthDateUTC);
         const futureBirthdayUTC=new Date(Date.UTC(currentDateUTC.getUTCFullYear(), birthDateUTC.getUTCMonth(), birthDateUTC.getUTCDate()))
         if (currentDateUTC>futureBirthdayUTC)
         {
@@ -38,7 +35,7 @@ export default function AllMembersList(props){
         setDisplayedMembers(sorted);
         setIsSorted(true);
     }
-
+    
     const resetToOriginal = () => {
         setDisplayedMembers([...originalMembers]);
         setIsSorted(false);

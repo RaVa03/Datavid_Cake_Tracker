@@ -11,7 +11,7 @@ export default function AddMemberPage() {
         setIsLoading(true);
         fetch(
            "http://localhost:3000",
-           {headers: { 'Content-type': 'application/json'//evidentiem ca datele sunt de tip JSON
+           {headers: { 'Content-type': 'application/json'
         }}
         ).then((response)=>{
             return response.json();
@@ -37,6 +37,7 @@ export default function AddMemberPage() {
     },[])
     const validateData = (data) => {
 
+        //General validations
         if(data.firstName == '') {
             return "First name field cannot be empty!"
         }
@@ -56,7 +57,7 @@ export default function AddMemberPage() {
             return "Image field cannot be empty!"
         }
         
-        //AGE validation
+        //Minimum AGE validation
         const currentDateUTC= new Date();
         const birthDateUTC=new Date(data.birthDate);
 
@@ -69,7 +70,7 @@ export default function AddMemberPage() {
         if(currentMonth < birthMonth || ((currentMonth===birthMonth) && (currentDay<birthDay))){
             age--;
         }
-        if (age<18)
+        if (age < 18)
             return "Age must be greater than 18 years old!";
         
 
@@ -78,8 +79,7 @@ export default function AddMemberPage() {
             console.log("loaded members:",loadedMembers)
             for(const index in loadedMembers)
                 {
-                    
-                        if(data.firstName === loadedMembers[index].firstName && data.lastName === loadedMembers[index].lastName){
+                    if(data.firstName === loadedMembers[index].firstName && data.lastName === loadedMembers[index].lastName){
                         return "This name already exists!"
                     }
                     if(data.country === loadedMembers[index].country && data.city === loadedMembers[index].city){
@@ -96,7 +96,7 @@ export default function AddMemberPage() {
         console.log(memberData);
         const message = validateData(memberData);
         if(message != 'Member succesfully added!') {
-           alert(message);//"Age must be greater than 18 years old!");
+           alert(message);
         }
         else{
 
@@ -104,16 +104,16 @@ export default function AddMemberPage() {
                     "http://localhost:3000/add-member",
                 {
                     method: 'POST',
-                body: JSON.stringify(memberData),//datele pe care le trimitem
-                headers: {
-                    'Content-type': 'application/json'//evidentiem ca datele sunt de tip JSON
+                    body: JSON.stringify(memberData),
+                    headers: {
+                        'Content-type': 'application/json'
                 }
             }
             ).then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
-                  }
-                  return response.json();
+                }
+                return response.json();
         
             })
             .then(() => {

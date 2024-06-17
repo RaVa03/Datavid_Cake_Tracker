@@ -12,7 +12,7 @@ function findAge(birthDate){
     if(currentMonth < birthMonth || ((currentMonth===birthMonth) && (currentDay<birthDay))){
         age--;
     }
-    if (age>=18)
+    if (age >= 18)
         return true;
     else
         return false;
@@ -46,4 +46,4 @@ const memberSchema=new mongoose.Schema({
         required: true
     },
 })
-export const MemberModel = mongoose.model("Members",memberSchema)
+export const MemberModel = mongoose.model("Members", memberSchema)

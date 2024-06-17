@@ -6,43 +6,40 @@ const app = express();
 app.use(cors());
 app.use(express.json())
 
-//mongo connection
 main().catch((err) => console.log(err, "mongo error"));
 async function main() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/members-app");
-  console.log("MONGO connection open");
-  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+    await mongoose.connect("mongodb://127.0.0.1:27017/members-app");
+    console.log("MONGO connection open");
 }
 
-// Example API Routes
 const router = express.Router();
 
 router.get('/', async (req, res) => {
     try {
-      const members = await MemberModel.find(); 
-      res.json(members);
+        const members = await MemberModel.find(); 
+        res.json(members);
     } catch (err) {
-      res.status(500).json({ message: err.message });
+        res.status(500).json({ message: err.message });
     }
   });
 
 router.post('/add-member', async (req, res) => {
     console.log(`Received data: ${JSON.stringify(req.body)}`);
     const member = new MemberModel({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
-      birthDate: req.body.birthDate,
-      country: req.body.country,
-      city: req.body.city,
-      image: req.body.image
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        birthDate: req.body.birthDate,
+        country: req.body.country,
+        city: req.body.city,
+        image: req.body.image
     });
   
     try {
-      const addMember = await member.save();
-      res.status(201).json(addMember);
+        const addMember = await member.save();
+        res.status(201).json(addMember);
     } 
     catch (err) {
-        console.error('Validation Error:', err); // Log full error
+        console.error('Validation Error:', err); 
         if (err.name === 'ValidationError') {
             const errorMessages = {};
             for (let field in err.errors) {
@@ -53,8 +50,8 @@ router.post('/add-member', async (req, res) => {
         res.status(500).json({ message: err.message });
     }
   });
-// Register the router
+
 app.use('/', router);
-  // Start the server
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

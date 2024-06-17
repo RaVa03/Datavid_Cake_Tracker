@@ -2,12 +2,10 @@ import AddCard from "../ui/AddCard";
 import "./AddMemberForm.css"
 import { useState} from 'react';
 import Button from "../ui/Button";
-
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 export default function AddMemberForm(props){
-
     const[firstNameValue, setFirstNameValue]=useState("");
     const[lastNameValue,setLastNameValue]=useState("");
     const[birthDateValue,setBirthDateValue]=useState(new Date());
@@ -41,10 +39,6 @@ export default function AddMemberForm(props){
                     <label htmlFor="lastName">Last name</label>
                     <input onChange={(event)=>{setLastNameValue(event.target.value);console.log(event.target.value);}} type="text" name="lastName" id="lastName" placeholder="Enter your last name" required/>
                 </div>
-                {/* <div className="divForm">
-                    <label htmlFor="birthDate">Birth Date</label>
-                    <input onChange={(event)=>{setBirthDateValue(event.target.value);console.log(event.target.value);}} type="text" name="birthDate" id="birthDate" placeholder="Enter your birth date"  required/>
-                </div> */}
                 <div className="divForm">
                     <label htmlFor="birthDate">Birth Date</label>
                     <DatePicker selected={birthDateValue} onChange={(date) => setBirthDateValue(date)} name="birthDate"  required/>

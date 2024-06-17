@@ -9,7 +9,7 @@ nav {
       flex-direction: column;
     }
 }
-ul{
+ul {
     display:flex;
     justify-content: center;
     padding: 0;
