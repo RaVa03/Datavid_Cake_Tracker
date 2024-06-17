@@ -7,7 +7,21 @@
 <br>
 
 ## Instructions of how to run the project
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Firstly, make sure to have MongoDB and Vite installed (when installing Vite select React and Javascript when configuring the project). After that, in the "Datavid Cake Tracker/Cake_Tracker" folder run "npm run dev" to start the development server. Also, in the "Datavid Cake Tracker/Cake_Tracker/src/server" folder run "node index.js" in order to make the connection to the database and start the Express server.
+  
+  Running the Vite app (needs npm version 18+):
+1. Clone the repo
+2. Navigate to the project
+3. Run the 'npm install' command to initialize the npm project
+4. Run the 'npm run dev' command to start the application (select React and Javascript when configuring the project)
+5. Follow the given link to access the app in the browser, for example: 'http://localhost:5173/'
+
+
+When installing MongoDB, you can keep all the suggested settings.
+Running the server:
+1. Open MongoDB Compass and connect to the recommended server (mongodb://localhost:27017/)
+1. Navigate the <project_path>/src/server/
+2. Run the 'node index.js' command to start the server
+*This must be ran in a separate terminal window, to make sure both frond-end and back-end are running at the same time.
 
 ## A glimpse of how it should look
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![image](https://github.com/RaVa03/Datavid_Cake_Tracker/assets/133386404/184da079-d101-4b87-b77d-c6e19d726add)
